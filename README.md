@@ -10,13 +10,16 @@ Central point to collect locale data for use in Ruby on Rails.
 
 Add to your Gemfile:
 
+    gem 'rails-i18n', '~> 5.0.0' # For 5.0.x
     gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
     gem 'rails-i18n', '~> 3.0.0' # For 3.x
-    gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master' # For 4.x
+    gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master' # For 5.x
+    gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'rails-4-x' # For 4.x
     gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'rails-3-x' # For 3.x
 
 or run this command:
 
+    gem install rails-i18n -v '~> 5.0.0' # For 5.0.0
     gem install rails-i18n -v '~> 4.0.0' # For 4.0.x
     gem install rails-i18n -v '~> 3.0.0' # For 3.x
 
@@ -51,18 +54,27 @@ Locale data whose structure is compatible with Rails 2.3 are available on the se
 
 Available locales are:
 
-> af, ar, az, be, bg, bn, bs, ca, cs, cy, da, de, de-AT, de-CH, el,
+> af, ar, az, be, bg, bn, bs, ca, cs, cy, da, de, de-AT, de-CH, de-DE, el,
 > en, en-AU, en-CA, en-GB, en-IE, en-IN, en-NZ, en-US, en-ZA, eo, es,
-> es-419, es-AR, es-CL, es-CO, es-CR, es-EC, es-MX, es-PA, es-PE, es-US, es-VE,
-> et, eu, fa, fi, fr, fr-CA, fr-CH, gl, he, hi, hi-IN, hr, hu, id, is, it,
-> it-CH, ja, km, kn, ko, lb, lo, lt, lv, mk, mn, mr-IN, ms, nb, ne, nl, nn, or,
-> pa, pl, pt, pt-BR, rm, ro, ru, sk, sl, sr, sv, sw, ta, th, tl, tr, tt, ug, uk,
+> es-419, es-AR, es-CL, es-CO, es-CR, es-EC, es-ES, es-MX, es-PA, es-PE, es-US, es-VE,
+> et, eu, fa, fi, fr, fr-CA, fr-CH, fr-FR, gl, he, hi, hi-IN, hr, hu, id, is, it,
+> it-CH, ja, ka, km, kn, ko, lb, lo, lt, lv, mk, ml, mn, mr-IN, ms, nb, ne, nl, nn, or,
+> pa, pl, pt, pt-BR, rm, ro, ru, sk, sl, sq, sr, sw, ta, th, tl, tr, tt, ug, uk,
 > ur, uz, vi, wo, zh-CN, zh-HK, zh-TW, zh-YUE
 
-Currently, no locales are complete. Typically they lack the following keys:
+Complete locales are:
+
+> af, da, de, de-AT, de-CH, de-DE, en-US, es, es-419, es-AR, es-CL, es-CO, es-CR, es-EC,
+> es-ES, es-MX, es-PA, es-PE, es-US, es-VE, et, fr, fr-CA, fr-CH, fr-FR, id, ja, ka, ml, nb,
+> nl, nn, pt-BR, sv, sv-SE, tr, zh-CN, zh-HK, zh-TW, zh-YUE
+
+Currently, most locales are incomplete. Typically they lack the following keys:
 
 - `activerecord.errors.messages.record_invalid`
-- `activerecord.errors.messages.restrict_dependent_destroy`
+- `activerecord.errors.messages.restrict_dependent_destroy.has_one`
+- `activerecord.errors.messages.restrict_dependent_destroy.has_many`
+- `errors.messages.model_invalid`
+- `errors.messages.required`
 
 We always welcome your contributions!
 
@@ -105,7 +117,6 @@ If you are not,
 ### Create or edit your locale file
 
 * Have a look in `rails/locale/en.yml`, which should be used as the base of your translation.
-  Note that we use `&errors_messages` and `<<: *errors_messages` to anchor and merge a part of translation data.
 * Create or edit your locale file.
   Please pay attention to save your files as UTF-8.
 
@@ -149,6 +160,7 @@ We will do the formality check and publish it as quick as we can.
 * [i18n-country-translation](https://github.com/onomojo/i18n-country-translations) for translations of country names
 * [i18n-spec](https://github.com/tigrish/i18n-spec) for RSpec matchers to test your locale files
 * [iso](https://github.com/tigrish/iso) for the list of valid language/region codes and their translations
+* [i18n-tasks](https://github.com/glebm/i18n-tasks)
 
 ## License
 

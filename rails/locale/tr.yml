@@ -1,5 +1,12 @@
 ---
 tr:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: 'Doğrulama başarısız oldu: %{errors}'
+        restrict_dependent_destroy:
+          has_one: Bağlı bir kayıt %{record} bulunduğu için kayıt silinemedi
+          has_many: Bağlı kayıtlar %{record} bulunduğu için kayıt silinemedi
   date:
     abbr_day_names:
     - Pzr
@@ -10,7 +17,7 @@ tr:
     - Cum
     - Cts
     abbr_month_names:
-    - 
+    -
     - Oca
     - Şub
     - Mar
@@ -36,7 +43,7 @@ tr:
       long: "%e %B %Y, %A"
       short: "%e %b"
     month_names:
-    - 
+    -
     - Ocak
     - Şubat
     - Mart
@@ -116,10 +123,6 @@ tr:
       not_a_number: geçerli bir sayı değil
       not_an_integer: tam sayı olmalı
       odd: tek olmalı
-      record_invalid: 'Doğrulama başarısız oldu: %{errors}'
-      restrict_dependent_destroy:
-        one: Bağlı bir kayıt %{record} bulunduğu için kayıt silinemedi
-        many: Bağlı kayıtlar %{record} bulunduğu için kayıt silinemedi
       taken: hali hazırda kullanılmakta
       too_long:
         one: çok uzun (en fazla 1 karakter)
@@ -131,6 +134,8 @@ tr:
         one: hatalı uzunlukta (1 karakter olmalı)
         other: hatalı uzunlukta (%{count} karakter olmalı)
       other_than: "%{count} karakterden oluşamaz"
+      model_invalid: "Doğrulama başarısız oldu: %{errors}"
+      required: doldurulmalı
     template:
       body: 'Lütfen aşağıdaki hataları düzeltiniz:'
       header:
@@ -171,7 +176,7 @@ tr:
           unit: ''
       format:
         delimiter: "."
-        precision: 2
+        precision: 3
         significant: true
         strip_insignificant_zeros: true
       storage_units:

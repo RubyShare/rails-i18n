@@ -1,5 +1,12 @@
 ---
 fr-CA:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: 'La validation a échoué : %{errors}'
+        restrict_dependent_destroy:
+          has_one: "Vous ne pouvez pas supprimer l'enregistrement car une personne à charge %{record} existe"
+          has_many: "Vous ne pouvez pas supprimer l'enregistrement parce que les %{record} dépendants existent"
   date:
     abbr_day_names:
     - dim
@@ -10,7 +17,7 @@ fr-CA:
     - ven
     - sam
     abbr_month_names:
-    - 
+    -
     - jan.
     - fév.
     - mar.
@@ -36,7 +43,7 @@ fr-CA:
       long: "%d %B %Y"
       short: "%y-%m-%d"
     month_names:
-    - 
+    -
     - janvier
     - février
     - mars
@@ -103,6 +110,7 @@ fr-CA:
     messages:
       accepted: doit être accepté(e)
       blank: doit être rempli(e)
+      present: doit être vide
       confirmation: ne concorde pas avec %{attribute}
       empty: doit être rempli(e)
       equal_to: doit être égal à %{count}
@@ -114,10 +122,11 @@ fr-CA:
       invalid: n'est pas valide
       less_than: doit être inférieur à %{count}
       less_than_or_equal_to: doit être inférieur ou égal à %{count}
+      model_invalid: "Validation échouée: %{errors}"
       not_a_number: n'est pas un nombre
       not_an_integer: doit être un nombre entier
       odd: doit être impair
-      record_invalid: 'La validation a échoué : %{errors}'
+      required: doit exister
       taken: n'est pas disponible
       too_long:
         one: est trop long (pas plus d'un caractère)
@@ -128,6 +137,7 @@ fr-CA:
       wrong_length:
         one: ne fait pas la bonne longueur (doit comporter un seul caractère)
         other: ne fait pas la bonne longueur (doit comporter %{count} caractères)
+      other_than: doit être différent de %{count}
     template:
       body: 'Veuillez vérifier les champs suivants : '
       header:
@@ -168,7 +178,7 @@ fr-CA:
           unit: ''
       format:
         delimiter: ''
-        precision: 2
+        precision: 3
         significant: true
         strip_insignificant_zeros: true
       storage_units:
@@ -184,6 +194,7 @@ fr-CA:
     percentage:
       format:
         delimiter: ''
+        format: "%n%"
     precision:
       format:
         delimiter: ''

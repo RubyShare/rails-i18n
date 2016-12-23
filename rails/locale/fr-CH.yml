@@ -1,5 +1,12 @@
 ---
 fr-CH:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: 'La validation a échoué : %{errors}'
+        restrict_dependent_destroy:
+          has_one: "Vous ne pouvez pas supprimer l'enregistrement car une personne à charge %{record} existe"
+          has_many: "Vous ne pouvez pas supprimer l'enregistrement parce que les %{record} dépendants existent"
   date:
     abbr_day_names:
     - dim
@@ -10,7 +17,7 @@ fr-CH:
     - ven
     - sam
     abbr_month_names:
-    - 
+    -
     - jan.
     - fév.
     - mar.
@@ -36,7 +43,7 @@ fr-CH:
       long: "%e %B %Y"
       short: "%e %b"
     month_names:
-    - 
+    -
     - janvier
     - février
     - mars
@@ -115,13 +122,11 @@ fr-CH:
       invalid: n'est pas valide
       less_than: doit être inférieur à %{count}
       less_than_or_equal_to: doit être inférieur ou égal à %{count}
+      model_invalid: "Validation échouée: %{errors}"
       not_a_number: n'est pas un nombre
       not_an_integer: doit être un nombre entier
       odd: doit être impair
-      record_invalid: 'La validation a échoué : %{errors}'
-      restrict_dependent_destroy:
-        one: 'Suppression impossible: un autre enregistrement est lié'
-        many: 'Suppression impossible: d''autres enregistrements sont liés'
+      required: doit exister
       taken: n'est pas disponible
       too_long:
         one: est trop long (pas plus d'un caractère)
@@ -173,7 +178,7 @@ fr-CH:
           unit: ''
       format:
         delimiter: ''
-        precision: 2
+        precision: 3
         significant: true
         strip_insignificant_zeros: true
       storage_units:
